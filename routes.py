@@ -8,8 +8,9 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
-
+    import random as rand
+    num = rand.randint(0, 100)
+    return render_template("about.html", kale="This is a random generator: {}".format(num))
 
 if __name__ == '__main__':
     app.run(debug=True)
